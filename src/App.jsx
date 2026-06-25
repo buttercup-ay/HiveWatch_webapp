@@ -19,7 +19,7 @@ import Settings from './pages/Settings';
 
 function AppLayout({ children }) {
   return (
-    <div className="flex min-h-screen bg-amber-50">
+    <div className="flex min-h-screen bg-stone-50/50 dark:bg-stone-950 transition-colors duration-300">
       <Sidebar />
       <div className="flex-1 md:ml-64 flex flex-col min-h-screen pb-16 md:pb-0">
         {children}
@@ -37,60 +37,18 @@ export default function App() {
         <Routes>
           <Route path="/login" element={<Login />} />
           <Route path="/" element={<Navigate to="/dashboard" replace />} />
-          <Route
-            path="/dashboard"
-            element={
-              <ProtectedRoute>
-                <AppLayout><Dashboard /></AppLayout>
-              </ProtectedRoute>
-            }
-          />
-          <Route
-            path="/trends"
-            element={
-              <ProtectedRoute>
-                <AppLayout><Trends /></AppLayout>
-              </ProtectedRoute>
-            }
-          />
-          <Route
-            path="/bee-activity"
-            element={
-              <ProtectedRoute>
-                <AppLayout><BeeActivity /></AppLayout>
-              </ProtectedRoute>
-            }
-          />
-          <Route
-            path="/security"
-            element={
-              <ProtectedRoute>
-                <AppLayout><Security /></AppLayout>
-              </ProtectedRoute>
-            }
-          />
-          <Route
-            path="/location"
-            element={
-              <ProtectedRoute>
-                <AppLayout><Location /></AppLayout>
-              </ProtectedRoute>
-            }
-          />
-          <Route
-            path="/settings"
-            element={
-              <ProtectedRoute>
-                <AppLayout><Settings /></AppLayout>
-              </ProtectedRoute>
-            }
-          />
+          <Route path="/dashboard" element={<ProtectedRoute><AppLayout><Dashboard /></AppLayout></ProtectedRoute>} />
+          <Route path="/trends" element={<ProtectedRoute><AppLayout><Trends /></AppLayout></ProtectedRoute>} />
+          <Route path="/bee-activity" element={<ProtectedRoute><AppLayout><BeeActivity /></AppLayout></ProtectedRoute>} />
+          <Route path="/security" element={<ProtectedRoute><AppLayout><Security /></AppLayout></ProtectedRoute>} />
+          <Route path="/location" element={<ProtectedRoute><AppLayout><Location /></AppLayout></ProtectedRoute>} />
+          <Route path="/settings" element={<ProtectedRoute><AppLayout><Settings /></AppLayout></ProtectedRoute>} />
           <Route path="*" element={<Navigate to="/dashboard" replace />} />
         </Routes>
         <ToastContainer
           position="bottom-right"
           limit={3}
-          theme="light"
+          theme="colored" // Allows React-Toastify to adapt better
           toastClassName="text-sm font-medium"
         />
       </BrowserRouter>

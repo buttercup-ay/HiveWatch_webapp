@@ -1,4 +1,3 @@
-```markdown
 # 🍯 HiveWatch — Enterprise Beehive Intelligence System
 
 A production-ready React.js + Firebase web application and dual-microcontroller IoT telemetry array engineered to track beehive microclimates, evaluate traffic velocity, and deliver continuous security auditing.
@@ -164,9 +163,6 @@ The ESP32 platform updates real-time values every **10 seconds**. The web applic
 * `/hive_001/calibration/weight_factor` — Dynamic float multiplier streamed to the HX711 scale without requiring hardware re-flashing.
 * `/hive_001/thresholds/` — User-defined minimum/maximum bounds for dynamic alerting.
 
-```
-
-```
 
 ## 🎓 Project Info
 - **Student**: University of Ilorin, Computer Engineering

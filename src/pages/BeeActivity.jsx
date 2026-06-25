@@ -141,15 +141,15 @@ export default function BeeActivity() {
       <main className="flex-1 p-4 md:p-6 flex flex-col gap-6 max-w-7xl mx-auto w-full">
         
         {/* Responsive Control Bar */}
-        <div className="bg-white dark:bg-stone-900 rounded-2xl shadow-sm border border-stone-200 dark:border-stone-800 p-4 flex flex-col md:flex-row md:items-center gap-4 justify-between transition-colors">
-          <div className="flex flex-col md:flex-row items-start md:items-center gap-4 w-full md:w-auto">
+        <div className="bg-white dark:bg-stone-900 rounded-2xl shadow-sm border border-stone-200 dark:border-stone-800 p-4 flex flex-col lg:flex-row lg:items-center gap-4 justify-between transition-colors">
+          <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4 w-full lg:w-auto flex-wrap">
             
-            <div className="w-full md:w-auto">
+            <div className="w-full sm:w-auto">
               <label className="block text-[10px] font-bold text-stone-400 dark:text-stone-500 uppercase tracking-wider mb-1">Time Range</label>
               <select
                 value={selectedRange}
                 onChange={(e) => setSelectedRange(e.target.value)}
-                className="w-full md:w-auto pl-3 pr-8 py-2 border border-stone-200 dark:border-stone-700 rounded-lg text-sm font-semibold text-stone-700 dark:text-stone-200 bg-stone-50 dark:bg-stone-950 focus:outline-none focus:ring-2 focus:ring-amber-500 focus:border-amber-500 transition-colors appearance-none cursor-pointer"
+                className="w-full sm:w-auto pl-3 pr-8 py-2 border border-stone-200 dark:border-stone-700 rounded-lg text-sm font-semibold text-stone-700 dark:text-stone-200 bg-stone-50 dark:bg-stone-950 focus:outline-none focus:ring-2 focus:ring-amber-500 focus:border-amber-500 transition-colors appearance-none cursor-pointer"
                 style={{ backgroundImage: `url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3e%3cpath stroke='%236b7280' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='M6 8l4 4 4-4'/%3e%3c/svg%3e")`, backgroundPosition: `right 0.5rem center`, backgroundRepeat: `no-repeat`, backgroundSize: `1.5em 1.5em` }}
               >
                 {RANGES.map((r) => (
@@ -159,7 +159,7 @@ export default function BeeActivity() {
             </div>
 
             {selectedRange === 'CUSTOM' && (
-              <div className="flex flex-col sm:flex-row items-start sm:items-end gap-3 w-full md:w-auto animate-in fade-in slide-in-from-left-4 duration-300">
+              <div className="flex flex-col sm:flex-row items-start sm:items-end gap-3 w-full sm:w-auto animate-in fade-in slide-in-from-left-4 duration-300">
                 <div className="w-full sm:w-auto">
                   <label className="block text-[10px] font-bold text-stone-400 dark:text-stone-500 uppercase tracking-wider mb-1">Start Date</label>
                   <input
@@ -186,7 +186,7 @@ export default function BeeActivity() {
             )}
           </div>
           
-          <div className="text-xs font-semibold text-stone-500 dark:text-stone-400 bg-stone-100 dark:bg-stone-800 px-3 py-1.5 rounded-full self-start md:self-auto flex-shrink-0 transition-colors">
+          <div className="text-xs font-semibold text-stone-500 dark:text-stone-400 bg-stone-100 dark:bg-stone-800 px-3 py-1.5 rounded-full self-start sm:self-end lg:self-auto mt-2 lg:mt-0 flex-shrink-0 transition-colors">
             {chartData.length} 30-min windows
           </div>
         </div>
